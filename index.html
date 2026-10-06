@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Previsão do Tempo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🌤️ Previsão do Tempo</h1>
+        
+        <div class="busca">
+            <input type="text" id="cidade" placeholder="Digite o nome da cidade...">
+            <button id="btnBuscar">Buscar</button>
+        </div>
+
+        <div id="carregando" class="escondido">Buscando dados...</div>
+        
+        <div id="erro" class="escondido">
+            ❌ Cidade não encontrada! Tente novamente.
+        </div>
+
+        <div id="card" class="escondido">
+            <h2 id="nomeCidade"></h2>
+            <p id="dataHora"></p>
+            
+            <div class="temperatura">
+                <span id="icone"></span>
+                <span id="tempValor"></span>
+            </div>
+
+            <p id="descricao"></p>
+
+            <div class="detalhes">
+                <div>💧 Umidade<br><span id="umidade"></span></div>
+                <div>💨 Vento<br><span id="vento"></span></div>
+                <div>🌡️ Sensação<br><span id="sensacao"></span></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
