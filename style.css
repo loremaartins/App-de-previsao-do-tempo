@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 450px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+}
+
+h1 {
+    text-align: center;
+    color: #222;
+    margin-bottom: 25px;
+    font-size: 22px;
+}
+
+.busca {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+input {
+    flex: 1;
+    padding: 14px;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    font-size: 16px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #4facfe;
+}
+
+button {
+    padding: 14px 20px;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+.escondido {
+    display: none !important;
+}
+
+#carregando {
+    text-align: center;
+    color: #555;
+    padding: 15px;
+}
+
+#erro {
+    background: #ffebee;
+    color: #c62828;
+    padding: 12px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#card {
+    text-align: center;
+}
+
+#nomeCidade {
+    font-size: 24px;
+    color: #222;
+    margin-bottom: 5px;
+}
+
+#dataHora {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.temperatura {
+    font-size: 50px;
+    font-weight: bold;
+    color: #222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+#icone {
+    font-size: 50px;
+}
+
+#descricao {
+    font-size: 18px;
+    color: #555;
+    text-transform: capitalize;
+    margin-bottom: 25px;
+}
+
+.detalhes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.detalhes > div {
+    background: #f0f9ff;
+    padding: 15px 10px;
+    border-radius: 12px;
+    font-size: 14px;
+    color: #333;
+}
+
+.detalhes span {
+    font-weight: bold;
+    font-size: 16px;
+    display: block;
+    margin-top: 5px;
+}
