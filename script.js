@@ -1,3 +1,29 @@
+const cidadeInput = document.getElementById('cidade');
+const btnBuscar = document.getElementById('btnBuscar');
+const card = document.getElementById('card');
+const erro = document.getElementById('erro');
+const carregando = document.getElementById('carregando');
+
+window.addEventListener('load', () => {
+    const salva = localStorage.getItem('ultimaCidade');
+    if (salva) { 
+        cidadeInput.value = salva; 
+        buscarTempo(salva); 
+    }
+});
+
+btnBuscar.addEventListener('click', () => {
+    const cid = cidadeInput.value.trim();
+    if (cid) buscarTempo(cid);
+});
+
+cidadeInput.addEventListener('keypress', e => {
+    if (e.key === 'Enter') { 
+        const cid = cidadeInput.value.trim(); 
+        if (cid) buscarTempo(cid); 
+    }
+});
+
 async function buscarTempo(cidade) {
     try {
         mostrarCarregando();
@@ -36,26 +62,5 @@ function mostrarDados(dados) {
     card.classList.remove('escondido');
 }
 
-const cidadeInput = document.getElementById('cidade');
-const btnBuscar = document.getElementById('btnBuscar');
-const card = document.getElementById('card');
-const erro = document.getElementById('erro');
-const carregando = document.getElementById('carregando');
-
-window.addEventListener('load', () => {
-    const salva = localStorage.getItem('ultimaCidade');
-    if (salva) { cidadeInput.value = salva; buscarTempo(salva); }
-});
-
-btnBuscar.addEventListener('click', () => {
-    const cid = cidadeInput.value.trim();
-    if (cid) buscarTempo(cid);
-});
-
-cidadeInput.addEventListener('keypress', e => {
-    if (e.key === 'Enter') { const cid = cidadeInput.value.trim(); if (cid) buscarTempo(cid); }
-});
-
 function mostrarCarregando() { esconderTudo(); carregando.classList.remove('escondido'); }
-function mostrarErro() { esconderTudo(); erro.classList.remove('escondido'); }
-function esconderTudo() { card.classList.add('escondido'); erro.classList.add('escondido'); carregando.classList.add('escondido'); }
+function mostrarErro() { esconderTudo(); erro.classList
