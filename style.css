@@ -1,140 +1,120 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    background: linear-gradient(135deg, #4facfe, #00f2fe);
-    min-height: 100vh;
-    padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  padding: 20px;
 }
 
 .container {
-    max-width: 450px;
-    margin: 0 auto;
-    background: white;
-    border-radius: 20px;
-    padding: 30px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
 }
 
 h1 {
-    text-align: center;
-    color: #222;
-    margin-bottom: 25px;
-    font-size: 22px;
+  font-size: 1.6rem;
+  color: #333;
+  margin-bottom: 20px;
 }
 
-.busca {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 25px;
+.busca-box {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
 input {
-    flex: 1;
-    padding: 14px;
-    border: 2px solid #ddd;
-    border-radius: 12px;
-    font-size: 16px;
-    outline: none;
+  flex: 1;
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  outline: none;
+  font-size: 1rem;
+  transition: border-color 0.3s;
 }
 
 input:focus {
-    border-color: #4facfe;
+  border-color: #00f2fe;
 }
 
 button {
-    padding: 14px 20px;
-    background: linear-gradient(135deg, #4facfe, #00f2fe);
-    color: white;
-    border: none;
-    border-radius: 12px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: transform 0.2s;
+  padding: 12px 20px;
+  background: #0083fe;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
 }
 
-button:active {
-    transform: scale(0.95);
+button:hover {
+  background: #0056b3;
 }
 
 .escondido {
-    display: none !important;
+  display: none !important;
 }
 
-#carregando {
-    text-align: center;
-    color: #555;
-    padding: 15px;
+#carregando, #erro {
+  margin-top: 15px;
+  font-weight: 500;
+  color: #555;
 }
 
 #erro {
-    background: #ffebee;
-    color: #c62828;
-    padding: 12px;
-    border-radius: 10px;
-    text-align: center;
-    margin-bottom: 15px;
+  color: #e74c3c;
 }
 
-#card {
-    text-align: center;
+.subtitulo {
+  font-size: 0.85rem;
+  color: #777;
+  margin-bottom: 15px;
 }
 
-#nomeCidade {
-    font-size: 24px;
-    color: #222;
-    margin-bottom: 5px;
+.temperatura-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #222;
+  margin: 10px 0;
 }
 
-#dataHora {
-    color: #777;
-    font-size: 14px;
-    margin-bottom: 20px;
-}
-
-.temperatura {
-    font-size: 50px;
-    font-weight: bold;
-    color: #222;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 10px;
-}
-
-#icone {
-    font-size: 50px;
-}
-
-#descricao {
-    font-size: 18px;
-    color: #555;
-    text-transform: capitalize;
-    margin-bottom: 25px;
+.descricao {
+  text-transform: capitalize;
+  color: #555;
+  margin-bottom: 20px;
+  font-weight: 500;
 }
 
 .detalhes {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
+  background: #f0f8ff;
+  padding: 15px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
 }
 
-.detalhes > div {
-    background: #f0f9ff;
-    padding: 15px 10px;
-    border-radius: 12px;
-    font-size: 14px;
-    color: #333;
-}
-
-.detalhes span {
-    font-weight: bold;
-    font-size: 16px;
-    display: block;
-    margin-top: 5px;
+.detalhes .item {
+  display: flex;
+  justify-content: space-between;
+  color: #444;
 }
