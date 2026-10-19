@@ -4,9 +4,15 @@ const card = document.getElementById('card');
 const erro = document.getElementById('erro');
 const carregando = document.getElementById('carregando');
 
+// COLOQUE SUA CHAVE AQUI
+const API_KEY = 'fc567f3ac58a5dcf4ab90a49df0070a3';
+
 window.addEventListener('load', () => {
   const salva = localStorage.getItem('ultimaCidade');
-  if (salva) { cidadeInput.value = salva; buscarTempo(salva); }
+  if (salva) { 
+    cidadeInput.value = salva; 
+    buscarTempo(salva); 
+  }
 });
 
 btnBuscar.addEventListener('click', () => {
@@ -25,13 +31,15 @@ async function buscarTempo(cidade) {
   try {
     mostrarCarregando();
     const resposta = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(cidade)}&appid=1b0a4b506630d3426c9e9e2c487f1a79&units=metric&lang=pt_br`
+      `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(cidade)}&appid=${API_KEY}&units=metric&lang=pt_br`
     );
-    if (!resposta.ok) throw new Error('Não encontrada');
+
+    if (!resposta.ok) throw new Error('Cidade não encontrada');
+
     const dados = await resposta.json();
     localStorage.setItem('ultimaCidade', cidade);
     mostrarDados(dados);
-  } catch {
+  } catch (err) {
     mostrarErro();
   }
 }
@@ -59,8 +67,16 @@ function mostrarDados(dados) {
   card.classList.remove('escondido');
 }
 
-function mostrarCarregando() { esconderTudo(); carregando.classList.remove('escondido'); }
-function mostrarErro() { esconderTudo(); erro.classList.remove('escondido'); }
+function mostrarCarregando() { 
+  esconderTudo(); 
+  carregando.classList.remove('escondido'); 
+}
+
+function mostrarErro() { 
+  esconderTudo(); 
+  erro.classList.remove('escondido'); 
+}
+
 function esconderTudo() {
   card.classList.add('escondido');
   erro.classList.add('escondido');
